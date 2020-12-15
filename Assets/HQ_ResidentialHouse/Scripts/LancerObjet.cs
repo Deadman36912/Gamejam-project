@@ -5,9 +5,10 @@ using UnityEngine;
 public class LancerObjet : MonoBehaviour
 {
     public Camera camera;
-    public Transform Parent1;
-    public Transform Parent2;
-    public Transform Joueur;
+    public Transform parent1;
+    Transform parent2;
+    public Transform joueur;
+    public float thrust;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class LancerObjet : MonoBehaviour
         {
             if (hit.transform.CompareTag("Object"))
             {
-                if(Parent1.childCount <= 0)
+                if(parent1.childCount <= 0)
                 {
                     Transform objectHit = hit.transform;
                     //objectHit.gameObject.SetActive(false);
@@ -28,9 +29,11 @@ public class LancerObjet : MonoBehaviour
                     Debug.Log(objectHit);
                     //On enleve le tag Object car sinon cette fonction pourrait se re-appliquer surl'objet selectionné
                     // /!\ Je pense que l'on pourrait l'enlever
-                    objectHit.tag = "Untagged";
+                    //objectHit.tag = "Untagged";
+                    //On sauvegarde le parent original de l'objet selectionné
+                    parent2 = objectHit.parent;
                     //On déplace l'objet en tant que Child de GameObject
-                    objectHit.SetParent(Parent1, true);
+                    objectHit.SetParent(parent1, true);
                     //On recupére le Rigidbody et on désactive la gravitée et on active isKinematic pour qu'il ne soit plus sujet a la gravité
                     Rigidbody RB = objectHit.GetComponent<Rigidbody>();
                     RB.useGravity = false;
@@ -41,8 +44,8 @@ public class LancerObjet : MonoBehaviour
 
                     //On récupere la position du Parent et on utilise c'est coordonnées pour déplacer l'objet sélectionné
                     //Vector3 position = Parent1.position;
-                    Quaternion rotation = Joueur.rotation;
-                    objectHit.rotation = rotation;
+                    Quaternion rotation = joueur.rotation;
+                    objectHit.localRotation = Quaternion.Euler(-10f, 0f, 0f);
                     objectHit.localPosition = Vector3.zero;
                     //objectHit.SetPositionAndRotation(position, rotation);
                 }
@@ -51,14 +54,28 @@ public class LancerObjet : MonoBehaviour
     }
     void TrowObject()
     {
+        Transform objectLaunch = parent1.GetChild(0);
+
+        objectLaunch.SetParent(parent2, true);
+
+        Rigidbody RB = objectLaunch.GetComponent<Rigidbody>();
+        RB.useGravity = true;
+        RB.isKinematic = false;
+
+        //On désactive le collider de l'objet sélectionné pour qu'il ne puisse plus intéragir avec notre personnage
+        Collider col = objectLaunch.GetComponentInChildren<Collider>();
+        col.enabled = true;
+
+        RB.AddForce(parent1.forward * thrust, ForceMode.Impulse);
+
 
     }
-        // Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
-            if((Parent1.childCount <= 0))
+            if((parent1.childCount <= 0))
             {
                 //Cette fonction permet au joueur de prendre un objet
                 SelectObject();
