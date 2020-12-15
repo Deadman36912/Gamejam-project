@@ -5290,7 +5290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ddec843a7c00543936c3925ce6b63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+  camera: {fileID: 2006204304}
 --- !u!4 &269846264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012292207184, guid: b74279ee14257d74a8d16260c4e84129,
@@ -5928,6 +5928,10 @@ PrefabInstance:
     - target: {fileID: 1000013483936992, guid: 28da8b9766521934caee9a26348b9cc6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013483936992, guid: 28da8b9766521934caee9a26348b9cc6, type: 3}
+      propertyPath: m_TagString
+      value: Object
       objectReference: {fileID: 0}
     - target: {fileID: 4000012807655084, guid: 28da8b9766521934caee9a26348b9cc6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39354,6 +39358,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000011169288234, guid: 5a0d275da7b1e0b489ec1865c91b9794,
     type: 3}
   m_PrefabInstance: {fileID: 1803774852}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &2006204304 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2000000, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+    type: 3}
+  m_PrefabInstance: {fileID: 1982987246}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2007521092
 PrefabInstance:
