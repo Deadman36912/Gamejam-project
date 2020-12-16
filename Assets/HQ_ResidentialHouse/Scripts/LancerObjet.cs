@@ -13,6 +13,7 @@ public class LancerObjet : MonoBehaviour
     public Image curseur;
     public float radius;
     public float maxDistance;
+    public Text texte;
     // Start is called before the first frame update
     void Start()
     {
@@ -86,15 +87,17 @@ public class LancerObjet : MonoBehaviour
                 if (hit.transform.CompareTag("Object"))
                 {
                     curseur.color = Color.red;
+                    texte.text = hit.transform.name;
                     if (Input.GetMouseButtonDown(0))
                     {
-                       
-                            //Cette fonction permet au joueur de prendre un objet
-                            SelectObject(hit.transform);
+                        Debug.Log("Clic");
+                        //Cette fonction permet au joueur de prendre un objet
+                        SelectObject(hit.transform);
                     }
                 }
                 else
                 {
+                    texte.text = "";
                     curseur.color = Color.white;
                 }
             }
