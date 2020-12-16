@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LancerObjet : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class LancerObjet : MonoBehaviour
     Transform parent2;
     public Transform joueur;
     public float thrust;
+    public GameObject curseur;
     // Start is called before the first frame update
     void Start()
     {
@@ -86,5 +88,22 @@ public class LancerObjet : MonoBehaviour
                 TrowObject();
             }
         }
+        else
+        {
+            RaycastHit hit;
+            Ray ray = camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.transform.CompareTag("Object"))
+                {
+                    curseur.GetComponent<Image>().color = new Color32(255, 0, 0, 255);
+                }
+                else
+                {
+                    curseur.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+                }
+            }
+        }
+        
     }
 }     
