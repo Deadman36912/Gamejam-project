@@ -6782,7 +6782,7 @@ MonoBehaviour:
   joueur: {fileID: 1904227348}
   thrust: 10
   curseur: {fileID: 1758219280}
-  radius: 1
+  radius: 0.02
   maxDistance: 5
   texte: {fileID: 2103184267}
 --- !u!4 &269846264 stripped
@@ -16272,6 +16272,28 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654101091}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!1 &654152147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000012426990046, guid: f5b154dac76bae949a07fff24c062e74,
+    type: 3}
+  m_PrefabInstance: {fileID: 1913626499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &654152148
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654152147}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -28534,8 +28556,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
@@ -48907,6 +48929,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 439794479}
     m_Modifications:
+    - target: {fileID: 1000012426990046, guid: f5b154dac76bae949a07fff24c062e74, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012426990046, guid: f5b154dac76bae949a07fff24c062e74, type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012940227866, guid: f5b154dac76bae949a07fff24c062e74, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013259861290, guid: f5b154dac76bae949a07fff24c062e74, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010959782252, guid: f5b154dac76bae949a07fff24c062e74, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.79637
@@ -51154,7 +51192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 13600000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_Radius
-      value: 0.01
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
