@@ -41,8 +41,13 @@ public class LancerObjet : MonoBehaviour
                     RB.useGravity = false;
                     RB.isKinematic = true;
                     //On désactive le collider de l'objet sélectionné pour qu'il ne puisse plus intéragir avec notre personnage
-                    Collider col = objectHit.GetComponentInChildren<Collider>();
-                    col.enabled = false;
+                    //Collider col = objectHit.GetComponentInChildren<Collider>();
+                    //col.enabled = false;
+                    Collider[] allColliders = objectHit.GetComponentsInChildren<Collider>(true);
+                    foreach (Collider c in allColliders)
+                    {
+                        c.enabled = false;
+                    }
 
                     //On récupere la position du Parent et on utilise c'est coordonnées pour déplacer l'objet sélectionné
                     //Vector3 position = Parent1.position;
@@ -65,13 +70,19 @@ public class LancerObjet : MonoBehaviour
         RB.isKinematic = false;
 
         //On désactive le collider de l'objet sélectionné pour qu'il ne puisse plus intéragir avec notre personnage
-        Collider col = objectLaunch.GetComponentInChildren<Collider>();
-        col.enabled = true;
+        //Collider col = objectLaunch.GetComponentInChildren<Collider>();
+        //col.enabled = true;
+        Collider[] allColliders = objectLaunch.GetComponentsInChildren<Collider>(true);
+        foreach (Collider c in allColliders)
+        {
+            c.enabled = true;
+        }
 
         RB.AddForce(parent1.forward * thrust, ForceMode.Impulse);
 
 
     }
+
     // Update is called once per frame
     void Update()
     {
