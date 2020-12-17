@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Musique/Menu.unity
+    path: Assets/Menu/Main Menu/Menu.unity
     guid: ad1ae700e6c33554593d681b3e652ae7
   - enabled: 1
     path: Assets/HQ_ResidentialHouse/DemoScene/DemoScene_RealtimeSetup_Day.unity
