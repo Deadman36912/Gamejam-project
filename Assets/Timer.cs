@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Timer : MonoBehaviour
 {
@@ -10,6 +11,16 @@ public class Timer : MonoBehaviour
     public float minutes;
     public float secondes;
     float tempsRestant;
+    
+    [SerializeField]
+    GameObject pausePanel;
+
+    [SerializeField]
+    RigidbodyFirstPersonController controller;
+
+    [SerializeField]
+    LancerObjet lanceur;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +39,30 @@ public class Timer : MonoBehaviour
         }
         if (Input.GetKeyDown("escape"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            PauseGame();
         }
+    }
+
+    void PauseGame()
+    {
+        pausePanel.SetActive(true);
+        Time.timeScale = 0f;
+        controller.mouseLook.SetCursorLock(false);
+        lanceur.canThrow = false;
+    }
+
+    public void ResumeGame()
+    {
+        Debug.Log("ResumeGame");
+        pausePanel.SetActive(false);
+        Time.timeScale = 1f;
+        controller.mouseLook.SetCursorLock(true);
+        lanceur.canThrow = true;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

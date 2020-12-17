@@ -14,9 +14,13 @@ public class LancerObjet : MonoBehaviour
     public float radius;
     public float maxDistance;
     public Text texte;
+
+    [HideInInspector]
+    public bool canThrow;
     // Start is called before the first frame update
     void Start()
     {
+        canThrow = true;
     }
     //isThrowing == False quand on prend l'objet, et True quand on le lance
     void ActivatePhysicObject(Transform objectHit, bool isThrowing)
@@ -70,10 +74,13 @@ public class LancerObjet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
+
+
         if ((parent1.childCount > 0))
         {
             curseur.color = Color.white;
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && canThrow)
             {
                 TrowObject();
                 parent1.GetComponent<AudioSource>().Play();
@@ -89,7 +96,7 @@ public class LancerObjet : MonoBehaviour
                 {
                     curseur.color = Color.red;
                     texte.text = hit.transform.name;
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(0) && canThrow)
                     {
                         //Cette fonction permet au joueur de prendre un objet
                         SelectObject(hit.transform);
