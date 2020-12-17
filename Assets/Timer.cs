@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class Timer : MonoBehaviour
             minutes = Mathf.FloorToInt(tempsRestant / 60);
             secondes = Mathf.FloorToInt(tempsRestant % 60);
             timerText.text = string.Format("{0:00}:{1:00}", minutes, secondes);
+        }
+        if (Input.GetKeyDown("escape"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
