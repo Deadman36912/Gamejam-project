@@ -76,6 +76,7 @@ public class LancerObjet : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 TrowObject();
+                parent1.GetComponent<AudioSource>().Play();
             }
         }
         else
@@ -90,7 +91,6 @@ public class LancerObjet : MonoBehaviour
                     texte.text = hit.transform.name;
                     if (Input.GetMouseButtonDown(0))
                     {
-                        Debug.Log("Clic");
                         //Cette fonction permet au joueur de prendre un objet
                         SelectObject(hit.transform);
                     }
