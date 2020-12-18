@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 3382686}
   - component: {fileID: 2335636}
   - component: {fileID: 13525148}
+  - component: {fileID: 1398089324}
   m_Layer: 0
   m_Name: BeanBag
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &429262
 Transform:
@@ -59,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2f12275f7d049de40a69a2ba51fce43b, type: 2}
+  - {fileID: 2100000, guid: 4d314c25cbc68e94a91a57530fc107fe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,3 +94,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.41235787
   m_Center: {x: -1.0442597e-15, y: 0.29393297, z: 0.000000014901165}
+--- !u!54 &1398089324
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189922}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
