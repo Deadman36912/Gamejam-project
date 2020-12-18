@@ -37,6 +37,11 @@ public class Timer : MonoBehaviour
             secondes = Mathf.FloorToInt(tempsRestant % 60);
             timerText.text = string.Format("{0:00}:{1:00}", minutes, secondes);
         }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            controller.mouseLook.SetCursorLock(false);
+        }
         if (Input.GetKeyDown("escape"))
         {
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

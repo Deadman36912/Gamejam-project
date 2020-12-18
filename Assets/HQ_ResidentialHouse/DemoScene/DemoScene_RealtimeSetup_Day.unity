@@ -48184,6 +48184,16 @@ PrefabInstance:
       propertyPath: lanceur
       value: 
       objectReference: {fileID: 268071264}
+    - target: {fileID: 691541214622832096, guid: ca87fdcc9cf4a424898f69113e28e5db,
+        type: 3}
+      propertyPath: minutes
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 691541214622832096, guid: ca87fdcc9cf4a424898f69113e28e5db,
+        type: 3}
+      propertyPath: secondes
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 691541215028055110, guid: ca87fdcc9cf4a424898f69113e28e5db,
         type: 3}
       propertyPath: m_AnchoredPosition.y
