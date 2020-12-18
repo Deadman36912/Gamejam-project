@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/HQ_ResidentialHouse/DemoScene/DemoScene_RealtimeSetup_Day.unity
     guid: 718ae377dfee76b49a6074faf22c97b7
+  - enabled: 1
+    path: Assets/Menu/End Menu/End Menu.unity
+    guid: f3f3dd86d3c999b4dbdd6818a43e8ece
   m_configObjects: {}
